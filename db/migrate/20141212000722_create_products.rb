@@ -3,12 +3,12 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.integer :item_id
       t.string :name
-      t.money :msrp
-      t.money :sale_price
+      t.decimal :msrp, :precision => 7, :scale => 2
+      t.decimal :sale_price, :precision => 7, :scale => 2
       t.string :thumbnail_image
       t.string :medium_image
       t.string :large_image
-      t.string :short_description
+      t.text :short_description
       t.string :brand_name
       t.string :customer_rating_image
       t.integer :purchased
