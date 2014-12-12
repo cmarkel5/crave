@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @product.item_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Msrp:</strong>
+  <%= @product.msrp %>
+</p>
+
+<p>
+  <strong>Sale price:</strong>
+  <%= @product.sale_price %>
+</p>
+
+<p>
+  <strong>Thumbnail image:</strong>
+  <%= @product.thumbnail_image %>
+</p>
+
+<p>
+  <strong>Medium image:</strong>
+  <%= @product.medium_image %>
+</p>
+
+<p>
+  <strong>Large image:</strong>
+  <%= @product.large_image %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @product.short_description %>
+</p>
+
+<p>
+  <strong>Brand name:</strong>
+  <%= @product.brand_name %>
+</p>
+
+<p>
+  <strong>Customer rating image:</strong>
+  <%= @product.customer_rating_image %>
+</p>
+
+<p>
+  <strong>Purchased:</strong>
+  <%= @product.purchased %>
+</p>
+
+<p>
+  <strong>Declined:</strong>
+  <%= @product.declined %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

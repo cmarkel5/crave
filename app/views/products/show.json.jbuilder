@@ -1,0 +1,1 @@
+json.extract! @product, :id, :item_id, :name, :msrp, :sale_price, :thumbnail_image, :medium_image, :large_image, :short_description, :brand_name, :customer_rating_image, :purchased, :declined, :created_at, :updated_at

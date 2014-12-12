@@ -1,0 +1,65 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %><br>
+    <%= f.number_field :item_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :msrp %><br>
+    <%= f.text_field :msrp %>
+  </div>
+  <div class="field">
+    <%= f.label :sale_price %><br>
+    <%= f.text_field :sale_price %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnail_image %><br>
+    <%= f.text_field :thumbnail_image %>
+  </div>
+  <div class="field">
+    <%= f.label :medium_image %><br>
+    <%= f.text_field :medium_image %>
+  </div>
+  <div class="field">
+    <%= f.label :large_image %><br>
+    <%= f.text_field :large_image %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %><br>
+    <%= f.text_field :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :brand_name %><br>
+    <%= f.text_field :brand_name %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_rating_image %><br>
+    <%= f.text_field :customer_rating_image %>
+  </div>
+  <div class="field">
+    <%= f.label :purchased %><br>
+    <%= f.number_field :purchased %>
+  </div>
+  <div class="field">
+    <%= f.label :declined %><br>
+    <%= f.number_field :declined %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
