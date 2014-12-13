@@ -1,5 +1,6 @@
 class Customer < ActiveRecord::Base
-  # has_and_belongs_to_many :products
+  has_many :purchases
+  has_many :products, through: :purchases
   before_save { email.downcase! }
   before_create :create_remember_token
 

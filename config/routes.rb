@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :purchases
+
   root 'static_pages#welcome'
 
   resources :products
