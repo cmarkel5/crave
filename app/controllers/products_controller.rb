@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
     @electronics = Product.grab_electronics
   end
 
+  def shop
+    @electronics = Product.grab_electronics.sample
+  end
+
   # GET /products
   # GET /products.json
   def index
