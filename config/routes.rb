@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  
+  root 'static_pages#welcome'
+
   resources :products
   resources :customers
   resources :sessions, only: [:create, :destroy]
 
+  match '/welcome',      to: 'static_pages#welcome',    via: 'get'
   match '/electronics',  to: 'products#electronics',    via: 'get'
   match '/signup',       to: 'customers#new',           via: 'get'
   match '/signin',       to: 'sessions#new',            via: 'get'
