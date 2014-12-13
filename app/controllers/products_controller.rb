@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to shop_path, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -77,6 +77,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:item_id, :name, :msrp, :sale_price, :thumbnail_image, :medium_image, :large_image, :short_description, :brand_name, :customer_rating_image, :purchased, :declined)
+      params.require(:product).permit(:item_id, :name, :msrp, :sale_price, :thumbnail_image, :short_description, :customer_rating_image, :purchased, :declined)
     end
 end

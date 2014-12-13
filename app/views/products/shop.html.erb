@@ -27,3 +27,24 @@
   <strong>Description:</strong>
   <%= @electronics["shortDescription"] %>
 </p>
+
+<div class="form-button">
+  <%= link_to "Purchase", products_path(product: { 
+  item_id: @electronics["itemId"], 
+  name: @electronics["name"], 
+  msrp: @electronics["msrp"], 
+  sale_price: @electronics["salePrice"], 
+  thumbnail_image: @electronics["thumbnailImage"], 
+  customer_rating_image: @electronics["customerRatingImage"]}), 
+  method: :post, class: "btn btn-large" %>
+</div>
+
+<div class="form-button">
+  <%= link_to "Decline", shop_path, class: "btn btn-large" %>
+</div>
+
+
+
+
+
+
