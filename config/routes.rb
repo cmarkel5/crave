@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :customers
   resources :sessions, only: [:create, :destroy]
+  resources :products, only: [:create]
 
   match '/welcome',         to: 'static_pages#welcome',    via: 'get'
   match '/electronics',     to: 'products#electronics',    via: 'get'
