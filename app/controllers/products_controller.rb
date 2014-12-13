@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def electronics
+    @electronics = Product.grab_electronics
+  end
+
   # GET /products
   # GET /products.json
   def index
