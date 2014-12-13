@@ -1,0 +1,29 @@
+<h1>SHOP</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @electronics["name"] %>
+</p>
+
+<img src="<%= @electronics["thumbnailImage"] %>" />
+</br>
+
+<img src="<%= @electronics["customerRatingImage"] %>" />
+</br>
+</br>
+<p>
+  <strong>Msrp:</strong>
+  <%= @electronics["msrp"] %>
+</p>
+
+<p>
+  <strong>Sale price:</strong>
+  <%= @electronics["salePrice"] %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @electronics["shortDescription"] %>
+</p>
