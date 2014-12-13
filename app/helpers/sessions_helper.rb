@@ -5,32 +5,32 @@ module SessionsHelper
     cookies.permanent[:remember_token] = remember_token
     # update our database with their cookie info
     customer.update_attribute(:remember_token, Customer.digest(remember_token))
-    # set a current_user variable equal to customer
-    self.current_user = customer
+    # set a current_customer variable equal to customer
+    self.current_customer = customer
   end
 
-  def current_user=(customer)
-    @current_user = customer
+  def current_customer=(customer)
+    @current_customer = customer
   end
 
-  def current_user
+  def current_customer
     digested_remember_token = Customer.digest(cookies[:remember_token])
-    @current_user ||= Customer.find_by(remember_token: digested_remember_token)
+    @current_customer ||= Customer.find_by(remember_token: digested_remember_token)
   end
 
-  def current_user?(customer)
-    current_user == customer
+  def current_customer?(customer)
+    current_customer == customer
   end
 
   def signed_in?
-    !current_user.nil?
+    !current_customer.nil?
   end
 
   def sign_out
-    current_user.update_attribute(:remember_token,
+    current_customer.update_attribute(:remember_token,
                   Customer.digest(Customer.new_remember_token))
     cookies.delete(:remember_token)
-    self.current_user = nil
+    self.current_customer = nil
   end
 
   def redirect_back_or(default)

@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /customers
   # GET /customers.json
@@ -10,6 +10,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @customer = Customer.find(params[:id])
   end
 
   # GET /customers/new
@@ -25,6 +26,13 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+
+    if @customer.save
+      sign_in @customer
+      redirect_back_or customer_path(@customer.id)
+    else
+      render 'new'
+    end
 
     respond_to do |format|
       if @customer.save
@@ -63,8 +71,16 @@ class CustomersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_customer
+    def correct_user
       @customer = Customer.find(params[:id])
+      redirect_to(root_path) unless current_customer?(@customer)
+    end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_path, notice: "Please sign in."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
