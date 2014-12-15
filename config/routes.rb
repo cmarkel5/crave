@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :declines
-
-  resources :purchases
-
   root 'static_pages#welcome'
 
   resources :customers
@@ -11,11 +7,14 @@ Rails.application.routes.draw do
   resources :products, only: [:create]
 
   match '/welcome',         to: 'static_pages#welcome',    via: 'get'
+  match '/about',           to: 'static_pages#about',      via: 'get'
   match '/electronics',     to: 'products#electronics',    via: 'get'
   match '/signup',          to: 'customers#new',           via: 'get'
   match '/signin',          to: 'sessions#new',            via: 'get'
   match '/signout',         to: 'sessions#destroy',        via: 'delete'
   match '/shop',            to: 'products#random',         via: 'get'
+  match '/purchase',        to: 'purchases#show',          via: 'get'
+  match '/purchases',       to: 'purchases#index',         via: 'get'
   match '/add_purchase',    to: 'purchases#add_purchase',  via: 'post'
   match '/add_decline',     to: 'declines#add_decline',    via: 'post'
 

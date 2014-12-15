@@ -1,5 +1,10 @@
 class PurchasesController < ApplicationController
 
+  def index
+    @products = current_customer.products
+    # @products = Product.all.where(item_id: @purchases.product_id).first
+  end
+
   def add_purchase
     if signed_in?
       if Product.where(item_id: product_params[:item_id]).first == nil
