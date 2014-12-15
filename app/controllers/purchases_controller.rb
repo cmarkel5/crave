@@ -1,13 +1,17 @@
 class PurchasesController < ApplicationController
 
   def add_purchase
-    if Product.where(item_id: product_params[:item_id]).first == nil
-      @product = Product.create(product_params)
+    if signed_in?
+      if Product.where(item_id: product_params[:item_id]).first == nil
+        @product = Product.create(product_params)
+      else
+        @product = Product.where(item_id: product_params[:item_id]).first
+      end
+      current_customer.products << @product
+      redirect_to shop_path
     else
-      @product = Product.where(item_id: product_params[:item_id]).first
+      redirect_to signin_path
     end
-    current_customer.products << @product
-    redirect_to shop_path
   end
 
   private
