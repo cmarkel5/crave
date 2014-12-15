@@ -1,13 +1,13 @@
-class PurchasesController < ApplicationController
-
-  def add_purchase
+class DeclinesController < ApplicationController
+  
+  def add_decline
     if signed_in?
       if Product.where(item_id: product_params[:item_id]).first == nil
         @product = Product.create(product_params)
       else
         @product = Product.where(item_id: product_params[:item_id]).first
       end
-      current_customer.purchases.create(product_id: @product.id)
+      current_customer.declines.create(product_id: @product.id)
       redirect_to shop_path
     else
       redirect_to signin_path
@@ -21,11 +21,3 @@ class PurchasesController < ApplicationController
     end
 
 end
-
-# # M, A_M, A
-# @movie.actors << @actor
-
-# # C, Pu, Pr
-# Purchase.create(customer_id: current_customer.id, product_id: @product.id)
-# current_customer.purchases.create(product_id: @product.id)
-# current_customer.products << @product
