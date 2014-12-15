@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   match '/signin',          to: 'sessions#new',            via: 'get'
   match '/signout',         to: 'sessions#destroy',        via: 'delete'
   match '/shop',            to: 'products#random',         via: 'get'
-
+  match '/add_purchase',    to: 'purchases#add_purchase',  via: 'post'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
