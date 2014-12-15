@@ -19,16 +19,10 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
 
-    if @customer.save
-      sign_in @customer
-      redirect_back_or customer_path(@customer.id)
-    else
-      render 'new'
-    end
-
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        sign_in @customer
+        format.html { redirect_to shop_path, notice: 'Welcome to Crave' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new }

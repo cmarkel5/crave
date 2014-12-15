@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   has_many :purchases
   has_many :customers, through: :purchases
+  has_many :declines
+  has_many :customers, through: :declines
 
   validates :item_id, uniqueness: true
 

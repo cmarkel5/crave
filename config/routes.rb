@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :declines
+
   resources :purchases
 
   root 'static_pages#welcome'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   match '/signout',         to: 'sessions#destroy',        via: 'delete'
   match '/shop',            to: 'products#random',         via: 'get'
   match '/add_purchase',    to: 'purchases#add_purchase',  via: 'post'
+  match '/add_decline',     to: 'declines#add_decline',    via: 'post'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
