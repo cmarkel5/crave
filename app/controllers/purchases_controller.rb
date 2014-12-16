@@ -1,8 +1,7 @@
 class PurchasesController < ApplicationController
 
   def index
-    @products = current_customer.products
-    # @products = Product.all.where(item_id: @purchases.product_id).first
+    @products = current_customer.purchased_products
   end
 
   def add_purchase

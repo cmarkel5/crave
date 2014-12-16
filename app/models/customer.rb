@@ -1,9 +1,10 @@
 class Customer < ActiveRecord::Base
   has_many :purchases
-  has_many :products, through: :purchases
+  has_many :purchased_products, through: :purchases, source: :product
+
   has_many :declines
-  has_many :products, through: :declines
-  
+  has_many :declined_products,  through: :declines,  source: :product
+
   before_save { email.downcase! }
   before_create :create_remember_token
 
@@ -27,3 +28,12 @@ class Customer < ActiveRecord::Base
     self.remember_token = Customer.digest(Customer.new_remember_token)
   end
 end
+
+
+
+
+
+# class PointOfContact < ActiveRecord::Base
+#   has_many :project_managed_systems, :class_name => 'System', :foreign_key => 'project_manager_id'
+#   has_many :technical_managed_systems, :class_name => 'System', :foreign_key => 'technical_manager_id'
+# end

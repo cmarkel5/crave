@@ -2,15 +2,17 @@
   <h1>My Purchases</h1>
   <table class="table">  
     <tr>
-      <th>Image</th>
-      <th>Price</th>
-      <th>Item</th>
+      <th>Image:</th>
+      <th>Price:</th>
+      <th>Item:</th>
+      <th>Date Purchased:</th>
     </tr>
     <% @products.each do |product| %>
       <tr>
         <td><img src="<%= product.thumbnail_image %>" /></td>
         <td><%= number_to_currency(product.sale_price) %></td>
         <td><%= product.name %></td>
+        <td><%= product.created_at %></td>
       </tr>
     <% end %>
   </table>
