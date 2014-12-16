@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#welcome'
 
-  resources :customers
+  resources :customers, except: [:index]
   resources :sessions, only: [:create, :destroy]
   resources :products, only: [:create]
 

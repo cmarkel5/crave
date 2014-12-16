@@ -1,4 +1,8 @@
-<h1>Welcome <%= @customer.name %></h1>
+<% provide(:title, @customer.name) %>
+<h1>
+  <%= gravatar_for @customer %>
+  Welcome <%= @customer.name %>
+</h1>
 
 <p id="notice"><%= notice %></p>
 
@@ -7,5 +11,4 @@
   <%= @customer.email %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Edit', edit_customer_path(@customer) %>
