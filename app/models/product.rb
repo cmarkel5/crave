@@ -1,8 +1,9 @@
 class Product < ActiveRecord::Base
   has_many :purchases
-  has_many :customers, through: :purchases
+  has_many :purchasing_customers, through: :purchases, source: :customer
+
   has_many :declines
-  has_many :customers, through: :declines
+  has_many :declining_customers,  through: :declines,  source: :customer
 
   validates :item_id, uniqueness: true
 
@@ -14,3 +15,16 @@ class Product < ActiveRecord::Base
     response["items"]
   end
 end
+
+
+
+
+
+
+
+
+
+# class System < ActiveRecord::Base
+#   belongs_to :project_manager, :class_name => 'PointOfContact'
+#   belongs_to :technical_manager, :class_name => 'PointOfContact'
+# end
