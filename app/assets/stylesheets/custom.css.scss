@@ -1,7 +1,14 @@
 .jumbotron {
   background-color: transparent;
+  padding-top: 15px;
 }
 
 .sale-price {
   color: #E87845;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
