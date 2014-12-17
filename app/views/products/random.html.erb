@@ -1,13 +1,11 @@
 <div class="container-fluid jumbotron">
   <div class="row">
-    <div class="text-center col-xs-8 col-md-6 col-md-offset-3">
-      <h4><%= @electronic["name"] %></h4>
-    </div>
-
-    <div class="text-center col-xs-4 col-md-3">
-      <div id="countdown">5</div>
+    <div class="text-center col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 ">
+      <h3><%= @electronic["name"] %></h3>
+      <hr />
     </div>
   </div>
+  
   </br>
 
   <div class="text-center">
@@ -16,24 +14,31 @@
     <img src="<%= @electronic["customerRatingImage"] %>" />
     </br>
     </br>
-    <p>
+    <small>list price: 
       <% if @electronic["msrp"] == nil %>
-        <%= number_to_currency(@electronic["salePrice"] * 1.3) %>
+        <strike><%= number_to_currency(@electronic["salePrice"] * 1.3) %></strike>
       <% else %>
-        <%= number_to_currency(@electronic["msrp"]) %>
+        <strike><%= number_to_currency(@electronic["msrp"]) %></strike>
       <% end %>
-    </p>
-
-    <p><%= number_to_currency(@electronic["salePrice"]) %></p>
+    </small>
+    <p>sale price: <span class="sale-price"><%= number_to_currency(@electronic["salePrice"])%></span></p>
 
     <!-- <p>
       <strong>Description:</strong>
       <%= @electronic["shortDescription"] %>
     </p> -->
   </div>
+  <br />
 
   <div class="row">
-    <div class="col-md-offset-5">
+    <div class="text-center col-md-4 col-md-offset-4">
+      <div id="DateCountdown" data-timer="30" style="width: 50%; margin: 0 auto;"></div>
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-2 col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4 text-center">
       <div class="form-button">
          <%= link_to "Decline", add_decline_path(product: {
         item_id: @electronic["itemId"],
@@ -43,10 +48,10 @@
         short_description: @electronic["shortDescription"],
         thumbnail_image: @electronic["thumbnailImage"],
         customer_rating_image: @electronic["customerRatingImage"]}),
-        method: :post, class: "btn btn-sm btn-primary" %>
+        method: :post, class: "btn btn-default btn-block btn-primary text-center" %>
       </div>
     </div>
-    <div class="col-md-offset-6">
+    <div class="col-xs-4 col-sm-2 col-md-2 text-center">
       <div class="form-button">
         <%= link_to "Purchase", add_purchase_path(product: {
         item_id: @electronic["itemId"],
@@ -56,31 +61,47 @@
         short_description: @electronic["shortDescription"],
         thumbnail_image: @electronic["thumbnailImage"],
         customer_rating_image: @electronic["customerRatingImage"]}),
-        method: :post, class: "btn btn-sm btn-primary" %>
+        method: :post, class: "btn btn-default btn-block btn-primary text-center" %>
       </div>
     </div>
   </div>
 </div>
 
 <script type="text/javascript">
-  var seconds;
-  var temp;
- 
-  function countdown() {
-    seconds = document.getElementById('countdown').innerHTML;
-    seconds = parseInt(seconds, 10);
- 
-    if (seconds == 1) {
-      temp = document.getElementById('countdown');
-      temp.innerHTML = '<a href="/add_decline">0!</a>';
-      return;
+
+  var timer = $("#DateCountdown").TimeCircles( {
+    count_past_zero: false,
+    start_angle: 0,
+    total_duration: 30
+  } );
+
+  function decline(unit, value, total) {
+    console.log('total: ' + total);
+    if (total <= 0) {
+      console.log('TODO: decline');
     }
+  };
+
+  timer.addListener(decline);
+
+  // var seconds;
+  // var temp;
  
-    seconds--;
-    temp = document.getElementById('countdown');
-    temp.innerHTML = seconds;
-    timeoutMyOswego = setTimeout(countdown, 1000);
-  } 
+  // function countdown() {
+  //   seconds = document.getElementById('countdown').innerHTML;
+  //   seconds = parseInt(seconds, 10);
  
-  countdown();
+  //   if (seconds == 1) {
+  //     temp = document.getElementById('countdown');
+  //     temp.innerHTML = '0';
+  //     return;
+  //   }
+ 
+  //   seconds--;
+  //   temp = document.getElementById('countdown');
+  //   temp.innerHTML = seconds;
+  //   timeoutMyOswego = setTimeout(countdown, 1000);
+  // } 
+ 
+  // countdown();
 </script>
