@@ -1,59 +1,73 @@
-<h1>SHOP</h1>
+<div id="countdown">2</div>
+
+<script type="text/javascript">
+  var seconds;
+  var temp;
+ 
+  function countdown() {
+    seconds = document.getElementById('countdown').innerHTML;
+    seconds = parseInt(seconds, 10);
+ 
+    if (seconds == 1) {
+      temp = document.getElementById('countdown');
+      temp.innerHTML = '<a href="/add_decline">DECLINESIES</a>';
+      return;
+    }
+ 
+    seconds--;
+    temp = document.getElementById('countdown');
+    temp.innerHTML = seconds;
+    timeoutMyOswego = setTimeout(countdown, 1000);
+  } 
+ 
+  countdown();
+</script>
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @electronics["name"] %>
-</p>
+<h4><%= @electronic["name"] %></h4>
 
-<img src="<%= @electronics["thumbnailImage"] %>" />
+<img src="<%= @electronic["thumbnailImage"] %>" />
 </br>
 
-<img src="<%= @electronics["customerRatingImage"] %>" />
+<img src="<%= @electronic["customerRatingImage"] %>" />
 </br>
 </br>
 <p>
   <strong>Msrp:</strong>
-  <%= @electronics["msrp"] %>
+  <%= @electronic["msrp"] %>
 </p>
 
 <p>
   <strong>Sale price:</strong>
-  <%= @electronics["salePrice"] %>
+  <%= @electronic["salePrice"] %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @electronics["shortDescription"] %>
+  <%= @electronic["shortDescription"] %>
 </p>
 
 <div class="form-button">
   <%= link_to "Purchase", add_purchase_path(product: {
-  item_id: @electronics["itemId"],
-  name: @electronics["name"],
-  msrp: @electronics["msrp"],
-  sale_price: @electronics["salePrice"],
-  short_description: @electronics["shortDescription"],
-  thumbnail_image: @electronics["thumbnailImage"],
-  customer_rating_image: @electronics["customerRatingImage"]}),
+  item_id: @electronic["itemId"],
+  name: @electronic["name"],
+  msrp: @electronic["msrp"],
+  sale_price: @electronic["salePrice"],
+  short_description: @electronic["shortDescription"],
+  thumbnail_image: @electronic["thumbnailImage"],
+  customer_rating_image: @electronic["customerRatingImage"]}),
   method: :post, class: "btn btn-large" %>
 </div>
 
 <div class="form-button">
   <%= link_to "Decline", add_decline_path(product: {
-  item_id: @electronics["itemId"],
-  name: @electronics["name"],
-  msrp: @electronics["msrp"],
-  sale_price: @electronics["salePrice"],
-  short_description: @electronics["shortDescription"],
-  thumbnail_image: @electronics["thumbnailImage"],
-  customer_rating_image: @electronics["customerRatingImage"]}),
+  item_id: @electronic["itemId"],
+  name: @electronic["name"],
+  msrp: @electronic["msrp"],
+  sale_price: @electronic["salePrice"],
+  short_description: @electronic["shortDescription"],
+  thumbnail_image: @electronic["thumbnailImage"],
+  customer_rating_image: @electronic["customerRatingImage"]}),
   method: :post, class: "btn btn-large" %>
 </div>
-
-
-
-
-
-

@@ -5,19 +5,19 @@ class ProductsController < ApplicationController
   end
 
   def random
-    @electronics = Product.grab_electronics.sample
+    @electronic = Product.grab_electronics.sample
   end
 
-  def duplication_check
-    duplication_array = []
+  # def duplication_check
+  #   duplication_array = []
 
-    @purchases.each do |product|
-      duplication_array << product.id
-    end
+  #   @purchases.each do |product|
+  #     duplication_array << product.id
+  #   end
 
-    @declines.each do |product|
-      duplication_array << product.id
-    end
-  end
+  #   @declines.each do |product|
+  #     duplication_array << product.id
+  #   end
+  # end
 
 end
