@@ -1,37 +1,50 @@
-<h1>Editing customer</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">  
+      <div class="well form">
+        <h2 class="text-center">Edit Profile</h2>
+        <%= form_for(@customer) do |f| %>
+          <% if @customer.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
 
-<%= form_for(@customer) do |f| %>
-  <% if @customer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+              <ul>
+              <% @customer.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-      <ul>
-      <% @customer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, class: 'text-input', autofocus: true  %>
+          </div>
+          <div class="field">
+            <%= f.label :email %><br>
+            <%= f.text_field :email, class: 'text-input' %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br>
+            <%= f.password_field :password, class: 'text-input' %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation %><br>
+            <%= f.password_field :password_confirmation, class: 'text-input' %>
+          </div>
+          </br>
+          
+          <%= f.submit 'Update', class: 'btn btn-sm btn-primary btn-block' %>
+
+        <% end %>
+        </br>
+        <p><%= link_to 'Back to profile', customers_path %></p>
+      </div>
     </div>
-  <% end %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  
-  <%= f.submit 'Update', class: 'btn btn-sm btn-primary' %>
 
-<% end %>
 
-<%= link_to 'Back to profile', customers_path %>
+
+
