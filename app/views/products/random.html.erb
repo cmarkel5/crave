@@ -1,4 +1,60 @@
-<div id="countdown">2</div>
+<div class="container-fluid jumbotron">
+  <div class="row">
+    <div class="text-center col-xs-8 col-md-6 col-md-offset-3">
+      <h4><%= @electronic["name"] %></h4>
+    </div>
+
+    <div class="text-center col-xs-4 col-md-3">
+      <div id="countdown">5</div>
+    </div>
+  </div>
+  <div class="text-center">
+    <img src="<%= @electronic["thumbnailImage"] %>" />
+    </br>
+
+    <img src="<%= @electronic["customerRatingImage"] %>" />
+    </br>
+    </br>
+    <p>
+      <strong>Msrp:</strong>
+      <%= @electronic["msrp"] %>
+    </p>
+
+    <p>
+      <strong>Sale price:</strong>
+      <%= @electronic["salePrice"] %>
+    </p>
+
+    <!-- <p>
+      <strong>Description:</strong>
+      <%= @electronic["shortDescription"] %>
+    </p> -->
+
+    <div class="form-button">
+      <%= link_to "Purchase", add_purchase_path(product: {
+      item_id: @electronic["itemId"],
+      name: @electronic["name"],
+      msrp: @electronic["msrp"],
+      sale_price: @electronic["salePrice"],
+      short_description: @electronic["shortDescription"],
+      thumbnail_image: @electronic["thumbnailImage"],
+      customer_rating_image: @electronic["customerRatingImage"]}),
+      method: :post, class: "btn btn-sm btn-primary" %>
+    </div>
+
+    <div class="form-button">
+      <%= link_to "Decline", add_decline_path(product: {
+      item_id: @electronic["itemId"],
+      name: @electronic["name"],
+      msrp: @electronic["msrp"],
+      sale_price: @electronic["salePrice"],
+      short_description: @electronic["shortDescription"],
+      thumbnail_image: @electronic["thumbnailImage"],
+      customer_rating_image: @electronic["customerRatingImage"]}),
+      method: :post, class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
   var seconds;
@@ -10,7 +66,7 @@
  
     if (seconds == 1) {
       temp = document.getElementById('countdown');
-      temp.innerHTML = '<a href="/add_decline">DECLINESIES</a>';
+      temp.innerHTML = '<a href="/add_decline">0!</a>';
       return;
     }
  
@@ -22,52 +78,3 @@
  
   countdown();
 </script>
-
-<p id="notice"><%= notice %></p>
-
-<h4><%= @electronic["name"] %></h4>
-
-<img src="<%= @electronic["thumbnailImage"] %>" />
-</br>
-
-<img src="<%= @electronic["customerRatingImage"] %>" />
-</br>
-</br>
-<p>
-  <strong>Msrp:</strong>
-  <%= @electronic["msrp"] %>
-</p>
-
-<p>
-  <strong>Sale price:</strong>
-  <%= @electronic["salePrice"] %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @electronic["shortDescription"] %>
-</p>
-
-<div class="form-button">
-  <%= link_to "Purchase", add_purchase_path(product: {
-  item_id: @electronic["itemId"],
-  name: @electronic["name"],
-  msrp: @electronic["msrp"],
-  sale_price: @electronic["salePrice"],
-  short_description: @electronic["shortDescription"],
-  thumbnail_image: @electronic["thumbnailImage"],
-  customer_rating_image: @electronic["customerRatingImage"]}),
-  method: :post, class: "btn btn-large" %>
-</div>
-
-<div class="form-button">
-  <%= link_to "Decline", add_decline_path(product: {
-  item_id: @electronic["itemId"],
-  name: @electronic["name"],
-  msrp: @electronic["msrp"],
-  sale_price: @electronic["salePrice"],
-  short_description: @electronic["shortDescription"],
-  thumbnail_image: @electronic["thumbnailImage"],
-  customer_rating_image: @electronic["customerRatingImage"]}),
-  method: :post, class: "btn btn-large" %>
-</div>
