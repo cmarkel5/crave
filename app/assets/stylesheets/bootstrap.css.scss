@@ -2847,7 +2847,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #325d88;
+  background-color: #222b37;
   border-color: transparent;
 }
 .btn-primary:hover,
@@ -4158,8 +4158,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #3e3f3a;
-  border-color: #3e3f3a;
+  background-color: #222b37;
+  border-color: #222b37;
+  border-radius: 0px;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -5416,6 +5417,8 @@ a.list-group-item-danger.active:focus {
   padding-bottom: 75%;
 }
 .well {
+  width: 35%;
+  margin-top: 60px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
