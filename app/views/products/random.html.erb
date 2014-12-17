@@ -8,50 +8,56 @@
       <div id="countdown">5</div>
     </div>
   </div>
+  </br>
+
   <div class="text-center">
     <img src="<%= @electronic["thumbnailImage"] %>" />
     </br>
-
     <img src="<%= @electronic["customerRatingImage"] %>" />
     </br>
     </br>
     <p>
-      <strong>Msrp:</strong>
-      <%= @electronic["msrp"] %>
+      <% if @electronic["msrp"] == nil %>
+        <%= number_to_currency(@electronic["salePrice"] * 1.3) %>
+      <% else %>
+        <%= number_to_currency(@electronic["msrp"]) %>
+      <% end %>
     </p>
 
-    <p>
-      <strong>Sale price:</strong>
-      <%= @electronic["salePrice"] %>
-    </p>
+    <p><%= number_to_currency(@electronic["salePrice"]) %></p>
 
     <!-- <p>
       <strong>Description:</strong>
       <%= @electronic["shortDescription"] %>
     </p> -->
+  </div>
 
-    <div class="form-button">
-      <%= link_to "Purchase", add_purchase_path(product: {
-      item_id: @electronic["itemId"],
-      name: @electronic["name"],
-      msrp: @electronic["msrp"],
-      sale_price: @electronic["salePrice"],
-      short_description: @electronic["shortDescription"],
-      thumbnail_image: @electronic["thumbnailImage"],
-      customer_rating_image: @electronic["customerRatingImage"]}),
-      method: :post, class: "btn btn-sm btn-primary" %>
+  <div class="row">
+    <div class="col-md-offset-5">
+      <div class="form-button">
+         <%= link_to "Decline", add_decline_path(product: {
+        item_id: @electronic["itemId"],
+        name: @electronic["name"],
+        msrp: @electronic["msrp"],
+        sale_price: @electronic["salePrice"],
+        short_description: @electronic["shortDescription"],
+        thumbnail_image: @electronic["thumbnailImage"],
+        customer_rating_image: @electronic["customerRatingImage"]}),
+        method: :post, class: "btn btn-sm btn-primary" %>
+      </div>
     </div>
-
-    <div class="form-button">
-      <%= link_to "Decline", add_decline_path(product: {
-      item_id: @electronic["itemId"],
-      name: @electronic["name"],
-      msrp: @electronic["msrp"],
-      sale_price: @electronic["salePrice"],
-      short_description: @electronic["shortDescription"],
-      thumbnail_image: @electronic["thumbnailImage"],
-      customer_rating_image: @electronic["customerRatingImage"]}),
-      method: :post, class: "btn btn-sm btn-primary" %>
+    <div class="col-md-offset-6">
+      <div class="form-button">
+        <%= link_to "Purchase", add_purchase_path(product: {
+        item_id: @electronic["itemId"],
+        name: @electronic["name"],
+        msrp: @electronic["msrp"],
+        sale_price: @electronic["salePrice"],
+        short_description: @electronic["shortDescription"],
+        thumbnail_image: @electronic["thumbnailImage"],
+        customer_rating_image: @electronic["customerRatingImage"]}),
+        method: :post, class: "btn btn-sm btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
