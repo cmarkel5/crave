@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Roboto:400,500");
+@import url("//fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans");
 /*!
  * bootswatch v3.3.1+2
  * Homepage: http://bootswatch.com
@@ -3939,7 +3939,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 20px 15px;
+  padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
   height: 60px;
@@ -4159,7 +4159,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #222b37;
-  border-color: #222b37;
+  border-bottom: 7px solid #2BBBAC;
   border-radius: 0px;
 }
 .navbar-default .navbar-brand {
@@ -6334,7 +6334,7 @@ button.close {
   text-transform: uppercase;
 }
 .navbar .nav > li > a {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 22px;
   font-weight: 500;
   text-transform: uppercase;
