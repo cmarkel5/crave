@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h1>All Purchases</h1>
+  <div>
+    <p>
+    <% @all_products.each do |product| %>
+      <%= product.name %></br>
+      <%= product.purchases.count %></br>
+      <%= product.declines.count %>
+    <% end %>  
+    </p>
+  </div>
+</div>
