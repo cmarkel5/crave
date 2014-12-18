@@ -1,3 +1,7 @@
+body {
+  margin-top: 69px;
+}
+
 .jumbotron {
   background-color: transparent;
   padding-top: 15px;
@@ -5,6 +9,10 @@
 
 .sale-price {
   color: #E87845;
+}
+
+.navbar-fixed-top {
+  padding-right: 15px;
 }
 
 .vcenter {
@@ -26,9 +34,13 @@ img.team {
 }
 
 .well.form {
-  margin: 20px auto;
+  margin: 50px auto;
   h2 {
     margin-top: 5px;
     margin-bottom: 20px;
   }
+}
+
+.add-margin-top {
+  margin-top: 25px;
 }
