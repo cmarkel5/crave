@@ -90,6 +90,14 @@
     timer.destroy();
   }
 
+var app;
+
+document.addEventListener("page:restore", function() {
+  $(function(){
+    $('.decline').trigger('click');
+  });
+});
+
   // var seconds;
   // var temp;
 
