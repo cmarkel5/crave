@@ -1,9 +1,9 @@
-<% provide(:title, @customer.name) %>
-
 <div class="container-fluid text-center jumbotron">
-  <%= gravatar_for @customer %>
-  <h2>Welcome <%= @customer.name %></h2>
-  <p><%= @customer.email %></p>
-  </br>
-  <%= link_to 'Edit Profile', edit_customer_path(@customer), class: 'btn btn-sm btn-primary' %>
+  <div class="add-margin-top">  
+    <%= gravatar_for @customer %>
+    <h2>Welcome <%= @customer.name %></h2>
+    <p><%= @customer.email %></p>
+    </br>
+    <%= link_to 'Edit Profile', edit_customer_path(@customer), class: 'btn btn-sm btn-primary' %>
+  </div>
 </div>
