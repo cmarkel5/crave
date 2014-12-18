@@ -18,18 +18,8 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def all_purchases
-    @all_products = Product.all
-
-    @purchased_products = @all_products.each do |product|
-                            product.name
-                            product.purchases.count
-                          end
-
-    @declined_products  = @all_products.each do |product|
-                            product.name
-                            product.declines.count
-                          end
+  def product_stats
+    @product_stats = Product.all                      
   end
 
   private

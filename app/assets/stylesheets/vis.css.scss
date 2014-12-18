@@ -33,25 +33,25 @@
 
 .bubble-node {
   /* fill: #d1e0f3; */
-  fill: #DCE9BE;
+  fill: #D9662F;
 }
 
 .bubble-hover {
   /* fill: #b8c7d9; */
-  fill: #E8E9E7;
+  fill: #222B37;
 }
 
 .bubble-selected {
   /* fill: #a8c8ee;  */
-  fill: #CEE98F;
+  fill: #222B37;
   /* stroke: #6081a3; */
   // stroke: #A6BA92;
   // stroke-width: 1.5px;
 }
 
 a.bubble-label {
-  font-family: georgia, "times new roman", times, serif;
-  color: inherit;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -61,7 +61,7 @@ a.bubble-label {
 }
 
 .bubble-label .bubble-label-value {
-  font: 11px sans-serif;
+  font: 16px 'Roboto', sans-serif;
   white-space: nowrap;
 }
 
