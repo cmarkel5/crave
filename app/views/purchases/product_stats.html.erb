@@ -1,0 +1,16 @@
+<div id="container" class="container-fluid">
+  <div id="main" role="main" class="row">
+    <div class="col-xs-12">
+      <div id="vis"></div>
+    </div>
+  </div>
+  <div id="status"></div>
+    <div id="controls">
+      <h3>Jitter</h3>
+      <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
+        <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
+        <output name="output" for="input">0.5</output>
+      </form>
+    </div>
+  </div>
+</div> <!--! end of #container -->

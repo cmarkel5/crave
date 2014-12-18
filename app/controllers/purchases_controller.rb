@@ -18,6 +18,10 @@ class PurchasesController < ApplicationController
     end
   end
 
+  def product_stats
+    @product_stats = Product.all                      
+  end
+
   private
 
     def product_params

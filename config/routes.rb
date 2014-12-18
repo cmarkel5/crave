@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match '/shop',            to: 'products#random',         via: 'get'
   match '/purchase',        to: 'purchases#show',          via: 'get'
   match '/purchases',       to: 'purchases#index',         via: 'get'
+  match '/product_stats',   to: 'purchases#product_stats', via: 'get'
   match '/add_purchase',    to: 'purchases#add_purchase',  via: 'post'
   match '/add_decline',     to: 'declines#add_decline',    via: 'post'
 
