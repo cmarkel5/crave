@@ -13,24 +13,24 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'text-input', autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'text-input' %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: 'text-input' %>
   </div>
   <div class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'text-input' %>
   </div>
   </br>
   
   <%= f.submit 'Submit', class: 'btn btn-sm btn-primary btn-block' %>
 
 <% end %>
-
+</br>
 <p>Already have an account? <%= link_to "Sign in!", signin_path %></p>

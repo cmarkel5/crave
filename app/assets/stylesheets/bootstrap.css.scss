@@ -4618,7 +4618,7 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px 15px;
+  padding: 15px 15px;
   margin-bottom: 30px;
   color: inherit;
   background-color: #f8f5f0;
@@ -4645,7 +4645,7 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding: 48px 0;
+    padding: 5px 0;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
@@ -5418,7 +5418,7 @@ a.list-group-item-danger.active:focus {
   padding-bottom: 75%;
 }
 .well {
-  width: 35%;
+  width: 100%;
   margin-top: 60px;
   min-height: 20px;
   padding: 19px;
