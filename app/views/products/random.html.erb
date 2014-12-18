@@ -41,12 +41,12 @@
         short_description: @electronic["shortDescription"],
         thumbnail_image: @electronic["thumbnailImage"],
         customer_rating_image: @electronic["customerRatingImage"]}),
-        method: :post, class: "btn btn-default btn-block btn-primary text-center" %>
+        method: :post, class: "btn btn-default btn-block btn-primary text-center decline" %>
       </div>
     </div>
 
     <div class="col-xs-4 col-sm-2 col-md-2 vcenter">
-      <div id="DateCountdown" data-timer="30" style="width: 100%; margin: 0 auto">
+      <div id="DateCountdown" data-timer="20" style="width: 100%; margin: 0 auto">
       </div>
     </div>
 
@@ -71,17 +71,24 @@
   var timer = $("#DateCountdown").TimeCircles( {
     count_past_zero: false,
     start_angle: 0,
-    total_duration: 30
+    total_duration: 20
   } );
 
   function decline(unit, value, total) {
     console.log('total: ' + total);
     if (total <= 0) {
-      console.log('TODO: decline');
-    }
+      console.log("auto click")
+      $(function(){
+        $('.decline').trigger('click');
+      });
+    };
   };
 
   timer.addListener(decline);
+
+  function killTimer() {
+    timer.destroy();
+  }
 
   // var seconds;
   // var temp;
