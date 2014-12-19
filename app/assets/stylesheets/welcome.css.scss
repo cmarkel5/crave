@@ -1,3 +1,5 @@
+@import url("//fonts.googleapis.com/css?family=Righteous");
+
 /* ============================================================
   PRIMARY STRUCTURE
 ============================================================ */
@@ -5,15 +7,36 @@
   max-width: 960px;
   margin: 0 auto;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Righteous", sans-serif;
+  color: #D9662F;
+}
+p {
+  font-family: "Roboto", sans-serif;
+}
+#top-products h2 {
+  margin-top: 60px;
+  color: #fff;
+}
+#top-products h4 {
+  color: #fff;
+}
+.home-icon {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 /* ============================================================
   SECTIONS
 ============================================================ */
+.column-padding {
+  padding: 0 12px;
+}
 section.module:last-child {
   margin-bottom: 0;
 }
 section.module h2 {
-  margin-bottom: 40px;
-  font-family: "Roboto Slab", serif;
+  margin-bottom: 15px;
+  font-family: "Righteous", sans-serif;
   font-size: 30px;
 }
 section.module p {
@@ -58,7 +81,7 @@ section.module.parallax-3 {
     font-size: 42px;
   }
   section.module p {
-    font-size: 20px;
+    font-size: 18px;
   }
   section.module.parallax h1 {
     font-size: 96px;
