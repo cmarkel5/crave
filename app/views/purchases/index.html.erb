@@ -1,19 +1,23 @@
 <div class="container-fluid">
-  <h1>My Purchases</h1>
-  <table class="table">  
-    <tr>
-      <th>Image:</th>
-      <th>Price:</th>
-      <th>Item:</th>
-      <th>Date Purchased:</th>
-    </tr>
-    <% @products.each do |product| %>
-      <tr>
-        <td><img src="<%= product.thumbnail_image %>" /></td>
-        <td><%= number_to_currency(product.sale_price) %></td>
-        <td><%= product.name %></td>
-        <td><%= product.created_at %></td>
-      </tr>
-    <% end %>
-  </table>
+  <h1 class="text-center">My Purchases</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <table class="table table-responsive">  
+        <tr>
+          <th>Image:</th>
+          <th>Price:</th>
+          <th>Item:</th>
+          <th>Date Purchased:</th>
+        </tr>
+        <% @products.each do |product| %>
+          <tr>
+            <td><img src="<%= product.thumbnail_image %>" /></td>
+            <td><%= number_to_currency(product.sale_price) %></td>
+            <td><%= product.name %></td>
+            <td><%= product.created_at.strftime('%a %d %b %Y') %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>

@@ -1,9 +1,13 @@
-<div class="container-fluid text-center jumbotron">
-  <div class="add-margin-top">  
-    <%= gravatar_for @customer %>
-    <h2>Welcome <%= @customer.name %></h2>
-    <p><%= @customer.email %></p>
-    </br>
-    <%= link_to 'Edit Profile', edit_customer_path(@customer), class: 'btn btn-sm btn-primary' %>
+<div class="container-fluid text-center">
+  <div class="add-margin-top">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">  
+        <%= gravatar_for @customer %>
+        <h2>Welcome <%= @customer.name %></h2>
+        <p><%= @customer.email %></p>
+        </br>
+        <%= link_to 'Edit Profile', edit_customer_path(@customer), class: 'btn btn-sm btn-primary' %>
+      </div>
+    </div>
   </div>
 </div>
