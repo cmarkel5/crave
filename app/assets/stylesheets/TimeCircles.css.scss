@@ -1,3 +1,5 @@
+@import "_config";
+
 /**
  *  This element is created inside your target element
  *  It is used so that your own element will not need to be altered
@@ -26,6 +28,7 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Century Gothic', Arial;
+    color: $darker-blue;
 }
 
 /**

@@ -8,16 +8,4 @@ class ProductsController < ApplicationController
     @electronic = Product.grab_electronics.sample
   end
 
-  # def duplication_check
-  #   duplication_array = []
-
-  #   @purchases.each do |product|
-  #     duplication_array << product.id
-  #   end
-
-  #   @declines.each do |product|
-  #     duplication_array << product.id
-  #   end
-  # end
-
 end

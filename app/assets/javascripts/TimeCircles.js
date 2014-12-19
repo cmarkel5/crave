@@ -805,7 +805,7 @@
         count_past_zero: true,
         circle_bg_color: "#60686F",
         use_background: true,
-        fg_width: 0.01,
+        fg_width: 0.02,
         bg_width: 0.1,
         text_size: 0.07,
         total_duration: "Auto",
@@ -831,7 +831,7 @@
             Seconds: {
                 show: true,
                 text: "Seconds",
-                color: "$bright-orange"
+                color: "#D9662F"
             }
         }
     };
