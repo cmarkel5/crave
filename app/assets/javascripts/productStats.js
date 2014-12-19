@@ -6,7 +6,7 @@ root = typeof exports !== "undefined" && exports !== null ? exports : this;
 Bubbles = function() {
   var chart, clear, click, collide, collisionPadding, connectEvents, data, force, gravity, hashchange, height, idValue, jitter, label, margin, maxRadius, minCollisionRadius, mouseout, mouseover, node, rScale, rValue, textValue, tick, transformData, update, updateActive, updateLabels, updateNodes, width;
   width = window.innerWidth;
-  height = window.innerHeight - 50;
+  height = 500;
   data = [];
   node = null;
   label = null;
@@ -70,7 +70,7 @@ Bubbles = function() {
       svg = d3.select(this).selectAll("svg").data([data]);
       svgEnter = svg.enter().append("svg");
       svg.attr("width", width + margin.left + margin.right);
-      svg.attr("height", height + margin.top + margin.bottom);
+      svg.attr("height", height);
       node = svgEnter.append("g").attr("id", "bubble-nodes").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
       node.append("rect").attr("id", "bubble-background").attr("width", width).attr("height", height).on("click", clear);
       label = d3.select(this).selectAll("#bubble-labels").data([data]).enter().append("div").attr("id", "bubble-labels");
