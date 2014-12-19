@@ -29,6 +29,12 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-fixed-top {
   padding-right: 15px;
 }
+
+.navbar-fixed-bottom {
+  background-color: $light-gray;
+  border-bottom: none;
+  border-top: 8px $bright-blue solid;
+}
   
 .crave-font {
   font-family: 'Righteous', cursive;
