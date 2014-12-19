@@ -2,6 +2,10 @@ body {
   margin-top: 69px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #222B37;
+}
+
 .jumbotron {
   background-color: transparent;
   padding-top: 15px;
@@ -13,6 +17,16 @@ body {
 
 .navbar-fixed-top {
   padding-right: 15px;
+}
+
+.crave-font {
+  font-family: 'Righteous', cursive;
+}
+
+.page-title {
+  font-size: 80px;
+  margin-left: 20px;
+  margin-top: 0px;
 }
 
 .vcenter {

@@ -2,35 +2,37 @@
   <div class="row add-margin-top">
     <div class="text-center col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 ">
       <h3><%= @electronic["name"] %></h3>
-      <hr />
+      </br>
+      </br>
     </div>
   </div>
-
-  </br>
-
   <div class="text-center" >
     <div class="container-fluid">
       <div class="row">
-        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-decline" style="height: 200px;">
+        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-decline" style="height: 200px; background: red;">
           PASS
         </div>
-        <img src="<%= @electronic["thumbnailImage"] %>" class="draggable col-xs-4 col-sm-4 col-md-2"/>
-        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-accept" style="height: 200px;">
+        <div class="col-xs-4 col-sm-4 col-md-2">
+          <img src="<%= @electronic["thumbnailImage"] %>" class="draggable"/>
+          </br>
+          <img src="<%= @electronic["customerRatingImage"] %>" />
+          </br>
+          </br>
+          <small>list price:
+            <% if @electronic["msrp"] == nil %>
+              <strike><%= number_to_currency(@electronic["salePrice"] * 1.3) %></strike>
+            <% else %>
+              <strike><%= number_to_currency(@electronic["msrp"]) %></strike>
+            <% end %>
+          </small>
+          <p>sale price: <span class="sale-price"><%= number_to_currency(@electronic["salePrice"])%></span></p>
+        </div>
+        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-accept" style="height: 200px; background: red;">
           BUY
         </div>
       </div>
     </div>
-    <img src="<%= @electronic["customerRatingImage"] %>" />
-    </br>
-    </br>
-    <small>list price:
-      <% if @electronic["msrp"] == nil %>
-        <strike><%= number_to_currency(@electronic["salePrice"] * 1.3) %></strike>
-      <% else %>
-        <strike><%= number_to_currency(@electronic["msrp"]) %></strike>
-      <% end %>
-    </small>
-    <p>sale price: <span class="sale-price"><%= number_to_currency(@electronic["salePrice"])%></span></p>
+
 
     <!-- <p>
       <strong>Description:</strong>
@@ -106,12 +108,25 @@
     });
   });
 
+//destroy line 106
+  timer.destroy();
+
+
   $( ".draggable" ).draggable({
     drag: function( event, ui ) {}
   });
 
   $( ".draggable" ).draggable({
-    revert: "invalid"
+    revert: "invalid",
+    stack: ".draggable",
+  });
+
+  $( "#droppable-decline" ).droppable({
+    tolerance: "touch"
+  });
+
+  $( "#droppable-accept" ).droppable({
+    tolerance: "touch"
   });
 
   $( "#droppable-accept" ).droppable({
@@ -126,5 +141,8 @@
     }
   });
 
+  $( ".draggable" ).draggable({
+    containment: "document"
+  });
 
 </script>
