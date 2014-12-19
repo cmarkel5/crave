@@ -185,9 +185,9 @@ Bubbles = function() {
       return id === idValue(d);
     });
     if (id.length > 0) {
-      return d3.select("#status").html("<h3>The word <span class=\"active\">" + id + "</span> is now active</h3>");
+      return d3.select("#status").html("<h3><span class=\"active\">" + id + "</span></h3>");
     } else {
-      return d3.select("#status").html("<h3>No word is active</h3>");
+      return d3.select("#status").html("<h3>[Click on a bubble to view product]</h3>");
     }
   };
   mouseover = function(d) {
@@ -279,5 +279,5 @@ $(function() {
   d3.select("#book-title").html(text.name);
   // use "http://localhost:3000/product_stats.json" when testing/on local host
   // use "https://thecrave.herokuapp.com/product_stats.json"
-  return d3.json("https://thecrave.herokuapp.com/product_stats.json", display);
+  return d3.json("http://localhost:3000/product_stats.json", display);
 });
