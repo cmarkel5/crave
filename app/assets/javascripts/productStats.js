@@ -236,21 +236,21 @@ root.plotData = function(selector, data, plot) {
 
 texts = [
   {
-    key: "sherlock",
-    file: "top_sherlock.csv",
-    name: "The Adventures of Sherlock Holmes"
+    key: "",
+    file: "",
+    name: ""
   }, {
-    key: "aesop",
-    file: "top_aesop.csv",
-    name: "Aesop's Fables"
+    key: "",
+    file: "",
+    name: ""
   }, {
-    key: "alice",
-    file: "alice.csv",
-    name: "Alice's Adventures in Wonderland"
+    key: "",
+    file: "",
+    name: ""
   }, {
-    key: "gulliver",
-    file: "top_gulliver.csv",
-    name: "Gulliver's Travels"
+    key: "",
+    file: "",
+    name: ""
   }
 ];
 
@@ -276,7 +276,6 @@ $(function() {
     location.replace("#");
     return location.search = encodeURIComponent(key);
   });
-  d3.select("#book-title").html(text.name);
   // use "http://localhost:3000/product_stats.json" when testing/on local host
   // use "https://thecrave.herokuapp.com/product_stats.json"
   return d3.json("http://localhost:3000/product_stats.json", display);
