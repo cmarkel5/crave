@@ -1,3 +1,4 @@
+@import "_config";
 #book-title {
   font-family: georgia, "times new roman", times, serif;
   color: #555;
@@ -33,17 +34,17 @@
 
 .bubble-node {
   /* fill: #d1e0f3; */
-  fill: #D9662F;
+  fill: $bright-orange;
 }
 
 .bubble-hover {
   /* fill: #b8c7d9; */
-  fill: #222B37;
+  fill: $darker-blue;
 }
 
 .bubble-selected {
   /* fill: #a8c8ee;  */
-  fill: #222B37;
+  fill: $darker-blue;
   /* stroke: #6081a3; */
   // stroke: #A6BA92;
   // stroke-width: 1.5px;
