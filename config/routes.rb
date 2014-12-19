@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products, only: [:create]
 
   match '/welcome',         to: 'static_pages#welcome',    via: 'get'
-  match '/about',           to: 'static_pages#about',      via: 'get'
+  match '/team',            to: 'static_pages#team',      via: 'get'
   match '/electronics',     to: 'products#electronics',    via: 'get'
   match '/signup',          to: 'customers#new',           via: 'get'
   match '/signin',          to: 'sessions#new',            via: 'get'
