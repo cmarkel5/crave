@@ -90,7 +90,11 @@
 
   function killTimer() {
     timer.destroy();
-  }
+  };
+
+  function load() {
+    console.log("RELOADED THE PAGE");
+  };
 
   document.addEventListener("page:restore", function() {
     $(function(){
