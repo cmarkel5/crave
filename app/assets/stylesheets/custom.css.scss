@@ -1,14 +1,16 @@
+@import "_config";
+
 body {
   margin-top: 69px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #222B37;
+  color: $darker-blue;
 }
 
 .product-name {
   font-family: "Roboto", sans-serif;
-  color: #222B37;
+  color: $darker-blue;
 }
 
 .jumbotron {
@@ -16,14 +18,18 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 15px;
 }
 
+.list-price {
+  color: $bright-orange;
+}
+
 .sale-price {
-  color: #D9662F;
+  color: $bright-blue;
 }
 
 .navbar-fixed-top {
   padding-right: 15px;
 }
-
+  
 .crave-font {
   font-family: 'Righteous', cursive;
 }
@@ -42,11 +48,11 @@ h1, h2, h3, h4, h5, h6 {
 
 img.team {
   width: 75%;
-  border: 2px #2BBBAC solid;
+  border: 2px $bright-blue solid;
 }
 
 .gravatar {
-  border: 3px #2BBBAC solid;
+  border: 3px $bright-blue solid;
   width: 30%;
 }
 
