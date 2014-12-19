@@ -278,5 +278,5 @@ $(function() {
   });
   // use "http://localhost:3000/product_stats.json" when testing/on local host
   // use "https://thecrave.herokuapp.com/product_stats.json"
-  return d3.json("http://localhost:3000/product_stats.json", display);
+  return d3.json("https://thecrave.herokuapp.com/product_stats.json", display);
 });
