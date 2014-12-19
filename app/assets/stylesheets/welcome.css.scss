@@ -22,6 +22,11 @@ p {
 #top-products h4 {
   color: #fff;
 }
+.home-logo {
+  padding-top: 190px;
+  // position: fixed;
+  // margin-left: -125px;
+}
 .home-icon {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -68,14 +73,14 @@ section.module.parallax h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 section.module.parallax-1 {
-  background-image: url("parallax-image.jpg");
+  background-color: $darker-blue;
 }
 section.module.parallax-2 {
-  background-image: url("parallax-image2.jpg");
+  background-color: $bright-blue;
 }
-section.module.parallax-3 {
-  background-image: url("parallax-image3.jpg");
-}
+// section.module.parallax-3 {
+//   background-image: url("parallax-image3.jpg");
+// }
 
 @media all and (min-width: 600px) {
   section.module h2 {
