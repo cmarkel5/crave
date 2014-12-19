@@ -831,7 +831,7 @@
             Seconds: {
                 show: true,
                 text: "Seconds",
-                color: "#D9662F"
+                color: "$bright-orange"
             }
         }
     };

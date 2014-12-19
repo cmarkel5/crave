@@ -1,3 +1,4 @@
+@import "_config";
 @import url("//fonts.googleapis.com/css?family=Roboto:400,500|Righteous");
 /*!
  * bootswatch v3.3.1+2
@@ -913,12 +914,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #D9662F;
+  color: $bright-orange;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #D9662F;
+  color: $bright-orange;
   text-decoration: underline;
 }
 a:focus {
@@ -4159,7 +4160,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #222b37;
-  border-bottom: 7px solid #2BBBAC;
+  border-bottom: 7px solid $bright-blue;
   border-radius: 0px;
 }
 .navbar-default .navbar-brand {
