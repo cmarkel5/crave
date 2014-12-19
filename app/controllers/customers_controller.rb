@@ -10,7 +10,11 @@ class CustomersController < ApplicationController
   end
 
   def new
-    @customer = Customer.new
+    if signed_in?
+      redirect_to shop_path
+    else
+      @customer = Customer.new
+    end
   end
 
   def edit
