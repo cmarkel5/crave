@@ -1,7 +1,7 @@
 <div class="container-fluid jumbotron">
   <div class="row add-margin-top">
     <div class="text-center col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 ">
-      <h3><%= @electronic["name"] %></h3>
+      <h3 class="product-name"><%= @electronic["name"] %></h3>
       </br>
       </br>
     </div>
@@ -9,9 +9,7 @@
   <div class="text-center" >
     <div class="container-fluid">
       <div class="row">
-        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-decline" style="height: 200px; background: red;">
-          PASS
-        </div>
+        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-decline" style="height: 200px;"></div>
         <div class="col-xs-4 col-sm-4 col-md-2">
           <img src="<%= @electronic["thumbnailImage"] %>" class="draggable"/>
           </br>
@@ -27,17 +25,9 @@
           </small>
           <p>sale price: <span class="sale-price"><%= number_to_currency(@electronic["salePrice"])%></span></p>
         </div>
-        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-accept" style="height: 200px; background: red;">
-          BUY
-        </div>
+        <div class= "col-xs-4 col-sm-4 col-md-5" id="droppable-accept" style="height: 200px;"></div>
       </div>
     </div>
-
-
-    <!-- <p>
-      <strong>Description:</strong>
-      <%= @electronic["shortDescription"] %>
-    </p> -->
   </div>
   <br />
 
@@ -107,10 +97,6 @@
       $('.decline').trigger('click');
     });
   });
-
-//destroy line 106
-  timer.destroy();
-
 
   $( ".draggable" ).draggable({
     drag: function( event, ui ) {}
