@@ -31,3 +31,9 @@ Explore Crave for yourself on [Heroku](https://thecrave.herokuapp.com/).
 
 ##Backlog
 A full list of user stories can be found on this [Trello Board](https://trello.com/b/V7qwdpoV/crave-app). A mockup of the app is available at [Moqups](https://moqups.com/ashleytindell/CcEnkYA4/).
+
+##ERD
+
+Below is the ERD created for Crave.
+
+![ERD](ERD.png)
