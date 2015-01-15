@@ -5,7 +5,7 @@
 </br>
 
 ##Overview
-Crave is a web application that allows users to quickly shop for new tech products at an introductory discount. A unique feature of the app is that the user must decide within 30 seconds whether or not they "crave" the product by either purchasing or declining the product within the allotted time.
+Crave is a web application that allows users to quickly shop for new tech products at an introductory discount. A unique feature of the app is that the user must decide within 20 seconds whether or not they "crave" the product by either purchasing or declining the product within the allotted time.
 
 Currently, Crave leverages the Wal-Mart API to source technology products. We chose the Wal-Mart API since there wasn't a new technology API available and because we wanted a more robust backend as compared to seeding the database.
 
